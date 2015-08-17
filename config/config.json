@@ -1,0 +1,13 @@
+{
+	"port":"9000",
+	"mongoose":{
+		"url":"mongodb://localhost/chat",
+		"options":{
+			"server":{
+				"socketOptions":{
+					"keepAlive":1
+				}
+			}
+		}
+	}
+}
