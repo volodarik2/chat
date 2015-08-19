@@ -23,6 +23,8 @@ $(document).on('click', '.icon_close', function (e) {
 */
 
 
+
+
 var Chat_init= function(){
     var self=this;
 
@@ -30,20 +32,27 @@ var Chat_init= function(){
 
     self.sendMessage=function(){
         var text =$('#btn-input').val();
-        self.socket.emit('front', { "mess": text });
+        self.socket.emit('message', { "mess": text } ,function(data){
+          //logik      
+        });
     }
 
     self.responseMessage=function(data){
-        console.log(data)
+        console.log(data.mess)
+
+
+
     }
 
-    self.authorized=function(){
+    self.autorization=function(){
        alert("authorized");
     }
 
+
+
     self.init= function(){
       
-      self.socket.on('backend', function (data) {
+      self.socket.on('message', function (data) {
          self.responseMessage(data);   
       });
       self.socket.on("not success", function (data) {
