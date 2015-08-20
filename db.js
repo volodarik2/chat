@@ -10,11 +10,11 @@ var connection = mysql.createConnection({
   database : config.db_name
 })
 
-connection.connect(function(err){  
+/*connection.connect(function(err){  
   if(err)
   	   new Error('error db');
 
-});
+});*/
 
 
 module.exports=connection;
