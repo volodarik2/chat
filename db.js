@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 var config= require('./config');
 var config= config.get('myconnect');
-
+ 
   
 var connection = mysql.createConnection({
   host     : config.host,
@@ -14,10 +14,15 @@ var connection = mysql.createConnection({
   if(err)
   	   new Error('error db');
 
-});*/
+});
+*/
 
 
-module.exports=connection;
+
+module.exports=function(){ 
+ console.log('okk');
+}
+//module.exports=connection;
 
 
 /*connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
@@ -28,4 +33,16 @@ module.exports=connection;
 
 //connection.end();
 
+/*var	db=connection;
+
+	db.logMassage=function( data){
+	      	            
+		                 this.query(
+		                 	"insert into `support_chat_log` values(null,"+data.room+","+data.text+","+data.id_user+","+data.time+")"
+		                 	);
+	                  }*/
+		
+
+
+//module.exports=connection;		
 
